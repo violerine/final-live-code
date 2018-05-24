@@ -24,9 +24,9 @@ module.exports={
         newBook.save((error,book)=>{
             if(error)res.status(500).send(error)
             else{
-                toDo.find({})
+                Book.find({})
                 .then(book=>{
-                    res.json(book
+                    res.json(book)
                 })
             }
         })
