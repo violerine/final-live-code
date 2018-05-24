@@ -1,6 +1,5 @@
 const Book = require ("../models/book")
 
-
 module.exports={
     getBooksByUserId:(req,res,next)=>{
         Book.find({userId:req.params.id})
@@ -9,6 +8,16 @@ module.exports={
         })
         .catch(err=>{
             res.send(err)
+        })
+    },
+
+    getAllBooks:(req,res,next)=>{
+        Book.find({})
+        .then(book=>{
+            res.send(book)
+        })
+        .catch(error=>{
+            res.send(error)
         })
     },
 
