@@ -37,7 +37,7 @@
     </form>
 
     <div class="ui message">
-        Have an account? <a href="login.html">Log in Here</a>
+        Have an account? <a href=""><router-link to="/login">Log in Here</router-link></a>
       </div>
   </div>
 </div>
@@ -49,30 +49,52 @@
 <script>
 
 export default {
-
+  data:{
+    name:'',
+    username:'',
+    password:'',
+  },
+  methods:{
+     register(){
+            axios.post('http://localhost:5000/register',
+            {
+                name:this.name, 
+                username:this.username, 
+                password:this.password})
+            .then(user=>{
+                alert("successfully create new account")
+                this.$router.push('/login')
+                console.log(user)
+            })
+            .catch(err=>{
+                alert("maaf terjadi kesalahan")
+                console.log(err)
+            })
+        }
+  }
 }
 
 </script>
 
-  <style type="text/css" scoped>
-    body {
-      background-color: #cfcfcf;
-    }
-    body .grid {
-      height: 100%;
-    }
-    .image {
-      margin-top: -100px;
-    }
-    .column {
-      max-width: 450px;
-    }
+<style type="text/css" scoped>
+body {
+  background-color: #cfcfcf;
+}
+body .grid {
+  height: 100%;
+}
+.image {
+  margin-top: -100px;
+}
+.column {
+  max-width: 450px;
+}
 
-    .image{
-        background-color: transparent !important
-    }
+.image{
+    background-color: transparent !important
+}
 
-    .register{
-        padding-top: 100px !important
-    }
-  </style>
+.register{
+    padding-top: 100px !important
+}
+</style>

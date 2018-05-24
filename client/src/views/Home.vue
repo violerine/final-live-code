@@ -1,10 +1,27 @@
 <template>
   <div class="home">
     <Navbar></Navbar>
+
+
+<!--JUMBOTRON-->
+
+
+<div class="jumbotron">
+  <h1>Welcome to SpongeBook!</h1>
+  <p>Check all Books Reviewed here</p>
+
+</div>
+
+
+<!--JUMBOTRON END-->
+
+
+
+
     <!-- <img src="../assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-<h3 class="ui center aligned header">Doubling Stackable Grid</h3>
-<div class="ui three column stackable grid container">
+<h3 class="ui center aligned header"></h3>
+<div class="ui two column stackable grid container">
   <div class="column">
       <!--UI CARD-->
     <Card></Card>
